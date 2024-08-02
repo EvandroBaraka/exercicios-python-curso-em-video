@@ -11,5 +11,5 @@
 # print('Os chaveiros escolhidos foram: ')
 # print(lista)
 
-lista = []
-print(lista)
+lista = [{'Nome':'Paulo', 'idade':22}, {'Nome':'Maria', 'idade':30}, {'Nome':'João', 'idade':45}]
+print(len(lista))
