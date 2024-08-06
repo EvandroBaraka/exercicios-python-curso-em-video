@@ -5,9 +5,10 @@ totalGols = 0
 
 for i in range(0, jogador['partidas']):
 	gols.append(int(input(f'Quantos gols {jogador["Nome"]} marcou na {i + 1}ª partida: ')))
-	totalGols += gols[i]
+	#totalGols += gols[i]
 jogador['gols'] = gols[:]
-jogador['total'] = totalGols
+#jogador['total'] = totalGols
+jogador['total'] = sum(gols)
 print('-='*35)
 print(jogador)
 print('-='*35)

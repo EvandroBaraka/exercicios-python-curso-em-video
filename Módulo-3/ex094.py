@@ -4,11 +4,19 @@ media = 0
 
 while True:
     pessoa['Nome'] = str(input('Nome: ')).strip()
-    pessoa['sexo'] = str(input('Sexo [M/F]: ')).strip().upper()[0]
+    while True:
+        pessoa['sexo'] = str(input('Sexo [M/F]: ')).strip().upper()[0]
+        if pessoa['sexo'] in 'MF':
+            break
+        print('ERRO. Digite apenas M ou F...')
     pessoa['Idade'] = int(input('Idade: '))
     grupo.append(pessoa.copy())
     pessoa.clear()
-    continuar = str(input('Deseja continuar? [S/N] ')).upper().strip()[0]
+    while True:
+        continuar = str(input('Deseja continuar? [S/N] ')).upper().strip()[0]
+        if continuar in 'SN':
+            break
+        print('ERRO. Digite apenas S ou N...')
     if continuar == 'N':
         break
 
@@ -18,7 +26,7 @@ media = media / len(grupo)
 
 print('=*=' * 20)
 print(f' - O grupo tem {len(grupo)} pessoas.')
-print(f' - A média de idade do grupo é de {media} anos.')
+print(f' - A média de idade do grupo é de {media:.2f} anos.')
 print(f' - As mulheres cadastradas foram: ', end='')
 for i in grupo:
     if i['sexo'] == 'F':
