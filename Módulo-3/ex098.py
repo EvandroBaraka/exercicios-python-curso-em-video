@@ -11,13 +11,16 @@ def contagem(inicio, fim, passo):
 		else:
 			p = passo
 	else:
-		p = passo
+		if passo < 0:
+			p = -1 * passo
+		else:
+			p = passo
 		f = fim + 1
 
 	print('-=' * 15)	
 	print(f'Contagem de {inicio} até {fim} de {passo} em {passo}')
 	for i in range(inicio, f, p):
-		print(i)
+		print(f'{i}', end=' ', flush=True)
 		sleep(0.5)
 	print('FIM')
 	print()
