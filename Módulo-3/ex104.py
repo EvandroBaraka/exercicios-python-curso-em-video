@@ -1,4 +1,7 @@
 def leiaInt():
+    """
+    ->gera um input que verifica se foi digitado um número inteiro
+    """
     while True:
         num = str(input('Digite um número inteiro: '))
         if num.isnumeric():
